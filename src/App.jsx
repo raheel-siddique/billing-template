@@ -1,9 +1,6 @@
 import './App.css'
-import './assets/libs/jsvectormap/css/jsvectormap.min.css';
-import './assets/js/layout.js';
-import './assets/css/bootstrap.min.css';
-import './assets/css/icons.min.css';
-import './assets/css/app.min.css';
+// import './assets/libs/jsvectormap/css/jsvectormap.min.css';
+
 import Home from './pages/home/Home.jsx';
 import Layout from './Layout.jsx';
 

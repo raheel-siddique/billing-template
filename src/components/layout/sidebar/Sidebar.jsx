@@ -1,9 +1,23 @@
+import { useState } from "react"
+import { Collapse, List, ListItem } from '@mui/material';
+import { Link  } from 'react-router-dom';
 
 function Sidebar() {
+
+    const [showInvoiceListDrop,setShowInvoiceListDrop]=useState(false);
+    const [openAuthSide,setOpenAuthSide]=useState(false);
+
+
+    const showInvListDropSide=()=>{
+        setShowInvoiceListDrop(!showInvoiceListDrop)
+    }
+
+    const handleToggleAuthSide = () => {
+        setOpenAuthSide(!openAuthSide);
+    };
   return (
     <div>
         <div className="app-menu navbar-menu">
-            <div className="navbar-brand-box">
                 <a href="index.html" className="logo logo-dark">
                     <span className="logo-sm">
                         <img src="assets/images/logo-sm.png" alt="" height="22" />
@@ -12,18 +26,8 @@ function Sidebar() {
                         <img src="assets/images/logo-dark.png" alt="" height="21" />
                     </span>
                 </a>
-                <a href="index.html" className="logo logo-light">
-                    <span className="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="" height="22" />
-                    </span>
-                    <span className="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="21" />
-                    </span>
-                </a>
-                <button type="button" className="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
-                    <i className="ri-record-circle-line"></i>
-                </button>
-            </div>
+               
+               
 
             <div id="scrollbar">
                 <div className="container-fluid">
@@ -41,10 +45,10 @@ function Sidebar() {
                         <li className="menu-title"><i className="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
 
                         <li className="nav-item">
-                            <a className="nav-link menu-link" href="#sidebarInvoiceManagement" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarInvoiceManagement">
+                            <a onClick={showInvListDropSide} className="nav-link menu-link" href="#sidebarInvoiceManagement" data-bs-toggle="collapse" role="button" aria-expanded={showInvoiceListDrop} aria-controls="sidebarInvoiceManagement">
                                 <i className="las la-file-invoice"></i> <span data-key="t-invoices">Invoices Management</span>
                             </a>
-                            <div className="collapse menu-dropdown" id="sidebarInvoiceManagement">
+                            <div className={`collapse menu-dropdown ${showInvoiceListDrop ? 'show' : ''}`} id="sidebarInvoiceManagement">
                                 <ul className="nav nav-sm flex-column">
                                     <li className="nav-item">
                                         <a href="invoice.html" className="nav-link" data-key="t-invoice"> Invoice </a>
@@ -125,28 +129,27 @@ function Sidebar() {
                                 </ul>
                             </div>
                         </li>
-
                         <li className="nav-item">
-                            <a className="nav-link menu-link" href="#sidebarAuthentication" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuthentication">
-                                <i className="las la-cog"></i> <span data-key="t-authentication">Authentication</span>
-                            </a>
-                            <div className="collapse menu-dropdown" id="sidebarAuthentication">
-                                <ul className="nav nav-sm flex-column">
-                                    <li className="nav-item">
-                                        <a href="auth-signin.html" className="nav-link" data-key="t-signin">Sign In</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a href="auth-signup.html" className="nav-link" data-key="t-signup">Sign Up</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a href="auth-pass-reset.html" className="nav-link" data-key="t-password-reset">Password Reset</a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a href="auth-lockscreen.html" className="nav-link" data-key="t-lock-screen">Lock Screen</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+            <a onClick={handleToggleAuthSide} className="nav-link menu-link" href="#sidebarAuthentication" data-bs-toggle="collapse" role="button" aria-expanded={openAuthSide} aria-controls="sidebarAuthentication">
+                <i className="las la-cog"></i> <span data-key="t-authentication">Authentication</span>
+            </a>
+            <Collapse className="collapse menu-dropdown show" in={openAuthSide} id="sidebarAuthentication">
+                <List className="nav nav-sm" sx={{ '& > .nav-item': { marginTop: '-8px', marginBottom: '-8px' } }}>
+                    <ListItem className="nav-item">
+                        <a href="" className="nav-link" data-key="t-signin">Sign In</a>
+                    </ListItem>
+                    <ListItem className="nav-item">
+                        <a href="" className="nav-link" data-key="t-signup">Sign Up</a>
+                    </ListItem>
+                    <ListItem className="nav-item">
+                        <a href="" className="nav-link" data-key="t-password-reset">Password Reset</a>
+                    </ListItem>
+                    <ListItem className="nav-item">
+                        <a href="" className="nav-link" data-key="t-lock-screen">Lock Screen</a>
+                    </ListItem>
+                </List>
+            </Collapse>
+        </li>
 
                         <li className="menu-title"><i className="ri-more-fill"></i> <span data-key="t-components">Components</span></li>
 
