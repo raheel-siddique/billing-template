@@ -41,7 +41,7 @@ function Home() {
                             </div>
                             <div className="col-sm-4">
                                 <div className="text-center px-2">
-                                    <img src="assets/images/invoice-widget.png" className="img-fluid" style={{height: "141px"}} alt="" />
+                                    <img src="./invoice-widget.png" className="img-fluid" style={{height: "141px"}} alt="" />
                                 </div>
                             </div>
                         </div>
@@ -494,7 +494,7 @@ function Home() {
                                                 <tr>
                                                     <td>
                                                         <div className="d-flex align-items-center">
-                                                            <img src="assets/images/flags/us.svg" className="rounded" alt="user-image" height="22" />
+                                                            <img src="./flags/us.svg" className="rounded" alt="user-image" height="22" />
                                                             <div className="flex-grow-1 ms-3">
                                                                 <p className="mb-0 text-truncate">US</p>
                                                             </div>
@@ -507,7 +507,7 @@ function Home() {
                                                 <tr>
                                                     <td>
                                                         <div className="d-flex align-items-center">
-                                                            <img src="assets/images/flags/italy.svg" className="rounded" alt="user-image" height="22" />
+                                                            <img src="./flags/italy.svg" className="rounded" alt="user-image" height="22" />
                                                             <div className="flex-grow-1 ms-3">
                                                                 <p className="mb-0 text-truncate">Italy</p>
                                                             </div>
@@ -520,7 +520,7 @@ function Home() {
                                                 <tr>
                                                     <td>
                                                         <div className="d-flex align-items-center">
-                                                            <img src="assets/images/flags/spain.svg" className="rounded" alt="user-image" height="22" />
+                                                            <img src="./flags/spain.svg" className="rounded" alt="user-image" height="22" />
                                                             <div className="flex-grow-1 ms-3">
                                                                 <p className="mb-0 text-truncate">Spain</p>
                                                             </div>
@@ -533,7 +533,7 @@ function Home() {
                                                 <tr>
                                                     <td>
                                                         <div className="d-flex align-items-center">
-                                                            <img src="assets/images/flags/french.svg" className="rounded" alt="user-image" height="22" />
+                                                            <img src="./flags/french.svg" className="rounded" alt="user-image" height="22" />
                                                             <div className="flex-grow-1 ms-3">
                                                                 <p className="mb-0 text-truncate">French</p>
                                                             </div>
@@ -546,7 +546,7 @@ function Home() {
                                                 <tr>
                                                     <td>
                                                         <div className="d-flex align-items-center">
-                                                            <img src="assets/images/flags/russia.svg" className="rounded" alt="user-image" height="22" />
+                                                            <img src="./flags/russia.svg" className="rounded" alt="user-image" height="22" />
                                                             <div className="flex-grow-1 ms-3">
                                                                 <p className="mb-0 text-truncate">Russia</p>
                                                             </div>
@@ -559,7 +559,7 @@ function Home() {
                                                 <tr>
                                                     <td>
                                                         <div className="d-flex align-items-center">
-                                                            <img src="assets/images/flags/ae.svg" className="rounded" alt="user-image" height="22" />
+                                                            <img src="./flags/ae.svg" className="rounded" alt="user-image" height="22" />
                                                             <div className="flex-grow-1 ms-3">
                                                                 <p className="mb-0 text-truncate">Arabic</p>
                                                             </div>
@@ -619,7 +619,7 @@ function Home() {
                                             </div>
                                         </td>
                                         <td><p className="mb-0">Lec-2152</p></td>
-                                        <td><img src="assets/images/users/avatar-1.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                        <td><img src="./users/avatar-1.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                             <a href="#" className="text-body align-middle">Donald Risher</a>
                                         </td>
                                         <td>20 Sep, 2022</td>
@@ -661,7 +661,7 @@ function Home() {
                                             </div>
                                         </td>
                                         <td><p className="mb-0">Lec-2153</p></td>
-                                        <td><img src="assets/images/users/avatar-2.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                        <td><img src="./users/avatar-2.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                             <a href="#" className="text-body align-middle">Brody Holman</a>
                                         </td>
                                         <td>12 Arl, 2022</td>
@@ -703,7 +703,7 @@ function Home() {
                                             </div>
                                         </td>
                                         <td><p className="mb-0">Lec-2154</p></td>
-                                        <td><img src="assets/images/users/avatar-3.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                        <td><img src="./users/avatar-3.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                             <a href="#" className="text-body align-middle">Jolie Hood</a>
                                         </td>
                                         <td>28 Mar, 2022</td>
@@ -745,7 +745,7 @@ function Home() {
                                             </div>
                                         </td>
                                         <td><p className="mb-0">Lec-2156</p></td>
-                                        <td><img src="assets/images/users/avatar-5.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                        <td><img src="./users/avatar-5.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                             <a href="#" className="text-body align-middle">Howard Lyons</a>
                                         </td>
                                         <td>18 Sep, 2022</td>
@@ -787,7 +787,7 @@ function Home() {
                                             </div>
                                         </td>
                                         <td><p className="mb-0">Lec-2157</p></td>
-                                        <td><img src="assets/images/users/avatar-6.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                        <td><img src="./users/avatar-6.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                             <a href="#" className="text-body align-middle">Howard Oneal</a>
                                         </td>
                                         <td>12 Feb, 2022</td>
@@ -829,7 +829,7 @@ function Home() {
                                             </div>
                                         </td>
                                         <td><p className="mb-0">Lec-2158</p></td>
-                                        <td><img src="assets/images/users/avatar-7.jpg" alt="" className="avatar-xs rounded-circle me-2" />
+                                        <td><img src="./users/avatar-7.jpg" alt="" className="avatar-xs rounded-circle me-2" />
                                             <a href="#" className="text-body align-middle">Jena Hall</a>
                                         </td>
                                         <td>30 Nov, 2022</td>
