@@ -15,9 +15,11 @@ function Navbar({toggleSidebarSize}) {
     const [isOpen, setIsOpen] = useState(false);
     const [countryFlag, setCountryFlag] = useState("./flags/us.svg");
     const [isOpenNote, setIsOpenNote] = useState(false);
+    const [profileItems, setProfileItems] = useState(false);
+
 
     const toggleDropdownNote = () => {
-        setIsOpenNote(!isOpen);
+        setIsOpenNote(!isOpenNote);
     };
 
     const [isDarkMode, setIsDarkMode] = useState("light");
@@ -52,14 +54,19 @@ function Navbar({toggleSidebarSize}) {
         setCountryFlag(flag)
         toggleDropdown()
       }
+
+
+      const dropProfileItems=()=>{
+        setProfileItems(!profileItems)
+      }
   return (
     <div>
           <header id="page-topbar">
     <div className="layout-width">
         <div className="navbar-header">
             <div className="d-flex">
-                <div className="navbar-brand-box horizontal-logo">
-                    <a href="#" className="logo logo-dark">
+                    <a href="#" className="logo logo-dark" style={{position:"relative", right:'10px'}}>
+                        
                         <span className="logo-sm">
                             <img src="./logo-sm.png" alt="" height="22" />
                         </span>
@@ -76,7 +83,6 @@ function Navbar({toggleSidebarSize}) {
                             <img src="./logo-light.png" alt="" height="21" />
                         </span>
                     </a>
-                </div>
 
                 <button type="button" className="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon" onClick={toggleSidebarSize}>
                     <span className="hamburger-icon">
@@ -215,17 +221,20 @@ function Navbar({toggleSidebarSize}) {
                 <div className="dropdown topbar-head-dropdown ms-1 header-item" id="notificationDropdown">
                 <button
                 type="button"
-                className="btn btn-icon btn-topbar btn-ghost-primary rounded-circle"
+                className="btn btn-icon btn-topbar btn-ghost-primary rounded-circle show"
                 id="page-header-notifications-dropdown"
                 onClick={toggleDropdownNote}
                 aria-haspopup="true"
+                aria-expanded="true"
             >
                 <i className="las la-bell fs-24"></i>
                 <span className="position-absolute topbar-badge fs-9 translate-middle badge rounded-pill bg-danger">3<span className="visually-hidden">unread messages</span></span>
             </button>
 
             {isOpenNote &&
-             <div className="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-notifications-dropdown">
+             <div className="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0 show" aria-labelledby="page-header-notifications-dropdown" style={{ position: 'absolute', inset: '0px 0px auto auto', margin: '0px', transform: 'translate(0px, 58px)', height:'370px', overflowY:'auto'}}
+             data-popper-placement="bottom-end"
+             >
 
              <div className="dropdown-head rounded-top">
                  <div className="p-3 bg-primary bg-pattern">
@@ -341,7 +350,7 @@ function Navbar({toggleSidebarSize}) {
                          </div>
 
                          <div className="my-3 text-center view-all">
-                             <button type="button" className="btn btn-soft-success btn-sm waves-effect waves-light">View
+                             <button type="button" className="btn btn-soft-success btn-sm waves-effect waves-light mb-4">View
                                  All Notifications <i className="ri-arrow-right-line align-middle"></i></button>
                          </div>
                      </div>
@@ -354,7 +363,7 @@ function Navbar({toggleSidebarSize}) {
                 </div>
 
                 <div className="dropdown header-item">
-                    <button type="button" className="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button onClick={dropProfileItems} type="button" className="btn show" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                         <span className="d-flex align-items-center">
                             <img className="rounded-circle header-profile-user" src="./users/avatar-4.jpg" alt="Header Avatar" />
                             <span className="text-start ms-xl-2">
@@ -362,14 +371,17 @@ function Navbar({toggleSidebarSize}) {
                             </span>
                         </span>
                     </button>
-                    <div className="dropdown-menu dropdown-menu-end">
-                        <a className="dropdown-item" href="#"><i className="bx bx-user fs-15 align-middle me-1"></i> <span key="t-profile">Profile</span></a>
-                        <a className="dropdown-item" href="#"><i className="bx bx-wallet fs-15 align-middle me-1"></i> <span key="t-my-wallet">My Wallet</span></a>
-                        <a className="dropdown-item d-block" href="#"><span className="badge bg-success float-end">11</span><i className="bx bx-wrench fs-15 align-middle me-1"></i> <span key="t-settings">Settings</span></a>
-                        <a className="dropdown-item" href="auth-lockscreen.html"><i className="bx bx-lock-open fs-15 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
-                        <div className="dropdown-divider"></div>
-                        <a className="dropdown-item text-danger" href="#"><i className="bx bx-power-off fs-15 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
-                    </div>
+                     {profileItems &&
+                       <div className="dropdown-menu dropdown-menu-end show" style={{ position: 'absolute', top: '0px', right: '0px', bottom: 'auto', left: 'auto', margin: '0px', transform: 'translate(0px, 64px)' }}>
+                       <a className="dropdown-item" href="#"><i className="bx bx-user fs-15 align-middle me-1"></i> <span key="t-profile">Profile</span></a>
+                       <a className="dropdown-item" href="#"><i className="bx bx-wallet fs-15 align-middle me-1"></i> <span key="t-my-wallet">My Wallet</span></a>
+                       <a className="dropdown-item d-block" href="#"><span className="badge bg-success float-end">11</span><i className="bx bx-wrench fs-15 align-middle me-1"></i> <span key="t-settings">Settings</span></a>
+                       <a className="dropdown-item" href="auth-lockscreen.html"><i className="bx bx-lock-open fs-15 align-middle me-1"></i> <span key="t-lock-screen">Lock screen</span></a>
+                       <div className="dropdown-divider"></div>
+                       <a className="dropdown-item text-danger" href="#"><i className="bx bx-power-off fs-15 align-middle me-1 text-danger"></i> <span key="t-logout">Logout</span></a>
+                   </div>
+                     }
+                  
                 </div>
             </div>
         </div>

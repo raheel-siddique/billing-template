@@ -352,7 +352,7 @@
 }
 
 [data-layout=vertical][data-layout-style=detached][data-topbar=dark] .horizontal-logo .logo-dark {
-    display: none
+    display: block
 }
 
 [data-layout=vertical][data-layout-style=detached][data-topbar=dark] .horizontal-logo .logo-light {
