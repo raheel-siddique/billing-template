@@ -1,144 +1,13 @@
 import { useState } from "react"
 import SideMenuList from "../SideMenuList";
-
-
-const menuItemsAuth = [
-    {
-      label: 'Sign In',
-      icon: 'las la-sign-in-alt',
-      url: '#',
-      key: 't-signin'
-    },
-    {
-      label: 'Sign Up',
-      icon: 'las la-user-plus',
-      url: '#',
-      key: 't-signup'
-    },
-    {
-      label: 'Password Reset',
-      icon: 'las la-key',
-      url: '#',
-      key: 't-password-reset'
-    },
-    {
-      label: 'Lock Screen',
-      icon: 'las la-lock',
-      url: '#',
-      key: 't-lock-screen'
-    }
-  ];
-
-
-const menuItemsInvoices = [
-    {
-      label: 'Invoice',
-      icon: 'las la-sign-in-alt',
-      url: '#',
-      key: 't-invoice'
-    },
-    {
-      label: 'Add Invoice',
-      icon: 'las la-user-plus',
-      url: '#',
-      key: 't-Add Invoice'
-    },
-    {
-      label: 'Invoice Details',
-      icon: 'las la-key',
-      url: '#',
-      key: 't-Invoice Details'
-    },
-    {
-      label: 'Payments',
-      icon: 'las la-lock',
-      url: '#',
-      key: 't-Payments'
-    },
-    {
-        label: 'Taxes',
-        icon: 'las la-lock',
-        url: '#',
-        key: 't-Taxes'
-      }
-  ];
-
-  const menuItemsProducts = [
-   
-    {
-      label: 'Product List',
-      icon: 'las la-user-plus',
-      url: '#',
-      key: 't-Product List'
-    },
-    {
-      label: 'Add Product',
-      icon: 'las la-key',
-      url: '#',
-      key: 't-Add Product'
-    },
-    
-  ];
-
-  const menuItemsReports = [
-   
-    {
-      label: 'Payment Summary',
-      icon: 'las la-user-plus',
-      url: '#',
-      key: 't-Payment Summary'
-    },
-    {
-      label: 'Sale Report',
-      icon: 'las la-key',
-      url: '#',
-      key: 't-Sale Report'
-    },
-    {
-        label: 'Expenses Report',
-        icon: 'las la-key',
-        url: '#',
-        key: 't-Expenses Report'
-      },
-  ];
-
-  const menuItemsUsers = [
-   
-    {
-      label: 'Users List',
-      icon: 'las la-user-plus',
-      url: '#',
-      key: 't-Users List'
-    },
-    {
-      label: 'Add User',
-      icon: 'las la-key',
-      url: '#',
-      key: 't-Add User'
-    },
-  
-  ];
+import './Sidebar.css'
+import { menuItemsAuth, menuItemsInvoices,menuItemsProducts,menuItemsReports,menuItemsTransactions,menuItemsUsers } from "../../../constants/menuItems";
+import { Link } from "react-router-dom";
 
 
 
-  const menuItemsTransactions = [
-   
-    {
-      label: 'Transactions List',
-      icon: 'las la-user-plus',
-      url: '#',
-      key: 't-Transactions List'
-    },
-    {
-      label: 'New Transaction',
-      icon: 'las la-key',
-      url: '#',
-      key: 't-New Transaction'
-    },
-  
-  ];
 function Sidebar() {
-
+  const [showScrollbar, setShowScrollbar] = useState(false);
     const [openAuthSide,setOpenAuthSide]=useState(false);
     const [openInvoicesSide,setOpenInvoicesSide]=useState(false);
     const [openProductsSide,setOpenProductsSide]=useState(false);
@@ -224,7 +93,11 @@ function Sidebar() {
                
                
 
-            <div id="scrollbar">
+            <div id="scrollbar"
+             className={`scrollbar-container ${showScrollbar ? 'show-scrollbar' : ''}`}
+             onMouseEnter={() => setShowScrollbar(true)}
+             onMouseLeave={() => setShowScrollbar(false)}
+            >
                 <div className="container-fluid">
 
                     <div id="two-column-menu">
@@ -232,9 +105,9 @@ function Sidebar() {
                     <ul className="navbar-nav" id="navbar-nav">
                         <li className="menu-title"><span data-key="t-menu">Menu</span></li>
                         <li className="nav-item">  
-                            <a className="nav-link menu-link" href="index.html">
+                            <Link className="nav-link menu-link" to="/">
                                 <i className="las la-house-damage"></i> <span data-key="t-dashboard">Dashboard</span>
-                            </a>
+                            </Link>
                         </li>
 
                         <li className="menu-title"><i className="ri-more-fill"></i> <span data-key="t-pages">Pages</span></li>
