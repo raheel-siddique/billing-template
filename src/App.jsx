@@ -1,37 +1,30 @@
-import './App.css'
-// import './assets/libs/jsvectormap/css/jsvectormap.min.css';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
 import Home from './pages/home/Home.jsx';
 import Layout from './Layout.jsx';
-
+import Invoice from './pages/invoices-managment/invoice/Invoice.jsx';
+// import AddInvoice from './pages/invoice/AddInvoice.jsx';
+// import InvoiceDetails from './pages/invoice/InvoiceDetails.jsx';
+// import Payments from './pages/invoice/Payments.jsx';
 
 function App() {
-
-
-
   return (
-    <>
-
-
+    <Router>
       <div id="layout-wrapper">
-
         <Layout />
-
-        <Home />
-
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/invoice">
+            <Route index  element={<Invoice />} />
+            {/* <Route path="add" element={<AddInvoice />} />
+            <Route path="details" element={<InvoiceDetails />} />
+            <Route path="payments" element={<Payments />} /> */}
+            {/* Add more sub-routes here */}
+          </Route>
+        </Routes>
       </div>
-
-
-
-      <button className="btn btn-danger btn-icon" id="back-to-top">
-        <i className="ri-arrow-up-line"></i>
-      </button>
-
-
-
-
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
