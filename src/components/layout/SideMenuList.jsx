@@ -1,7 +1,17 @@
-import { Collapse, List, ListItem } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import {Collapse, List, ListItem} from '@mui/material'
+
+
+console.log('sidebar items re-rendering')
 
 
 function SideMenuList({handleToggleAuthSide, openAuthSide, menuItemsAuth, menuTitle, titleClass}) {
+    const navigate = useNavigate();
+
+
+    const redirectOnPage=(uri)=>{
+        navigate(uri)
+    }
     
   return (
 
@@ -20,8 +30,8 @@ function SideMenuList({handleToggleAuthSide, openAuthSide, menuItemsAuth, menuTi
                         const {label, icon,url,key}=menuItems
                         return(
                             <>
-                            <ListItem key={index} className="nav-item">
-                        <a href="#" className="nav-link" data-key={key}>{label}</a>
+                            <ListItem key={index} className="nav-item nav-item-own" onClick={()=>{redirectOnPage(url)}}>
+                        <span  className="nav-link" data-key={key}>{label}</span>
                     </ListItem>
                             </>
                         )

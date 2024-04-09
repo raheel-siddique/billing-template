@@ -30,31 +30,31 @@ export const menuItemsInvoices = [
     {
       label: 'Invoice',
       icon: 'las la-sign-in-alt',
-      url: '#',
+      url: '/invoice',
       key: 't-invoice'
     },
     {
       label: 'Add Invoice',
       icon: 'las la-user-plus',
-      url: '#',
+      url: '/invoice/add',
       key: 't-Add Invoice'
     },
     {
       label: 'Invoice Details',
       icon: 'las la-key',
-      url: '#',
+      url: '/invoice/details',
       key: 't-Invoice Details'
     },
     {
       label: 'Payments',
       icon: 'las la-lock',
-      url: '#',
+      url: '/invoice/payments',
       key: 't-Payments'
     },
     {
         label: 'Taxes',
         icon: 'las la-lock',
-        url: '#',
+        url: '/invoice/taxes',
         key: 't-Taxes'
       }
   ];
@@ -64,13 +64,13 @@ export const menuItemsInvoices = [
     {
       label: 'Product List',
       icon: 'las la-user-plus',
-      url: '#',
+      url: '/products',
       key: 't-Product List'
     },
     {
       label: 'Add Product',
       icon: 'las la-key',
-      url: '#',
+      url: '/products/add',
       key: 't-Add Product'
     },
     
