@@ -31,3 +31,8 @@
 .show-scrollbar {
     overflow-y: auto;
 }
+
+
+.nav-item-own{
+    cursor: pointer;
+}

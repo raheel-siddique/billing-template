@@ -4,6 +4,7 @@ import './Sidebar.css'
 import { menuItemsAuth, menuItemsInvoices,menuItemsProducts,menuItemsReports,menuItemsTransactions,menuItemsUsers } from "../../../constants/menuItems";
 import { Link } from "react-router-dom";
 
+console.log('sidebar re-rendering')
 
 
 function Sidebar() {

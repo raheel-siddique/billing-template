@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Navbar from "./components/layout/navbar/Navbar"
 import Sidebar from "./components/layout/sidebar/Sidebar"
 
+console.log('layout re-rendering')
+
 function Layout() {
 
 
