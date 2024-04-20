@@ -2,27 +2,27 @@ export const menuItemsAuth = [
     {
       label: 'Sign In',
       icon: 'las la-sign-in-alt',
-      url: '#',
+      url: '/auth/sign-in',
       key: 't-signin'
     },
     {
       label: 'Sign Up',
       icon: 'las la-user-plus',
-      url: '#',
+      url: '/auth/sign-up',
       key: 't-signup'
     },
     {
       label: 'Password Reset',
       icon: 'las la-key',
-      url: '#',
+      url: '/auth/reset-password',
       key: 't-password-reset'
     },
-    {
-      label: 'Lock Screen',
-      icon: 'las la-lock',
-      url: '#',
-      key: 't-lock-screen'
-    }
+    // {
+    //   label: 'Lock Screen',
+    //   icon: 'las la-lock',
+    //   url: '#',
+    //   key: 't-lock-screen'
+    // }
   ];
 
 
@@ -81,39 +81,23 @@ export const menuItemsInvoices = [
     {
       label: 'Payment Summary',
       icon: 'las la-user-plus',
-      url: '#',
+      url: '/reports',
       key: 't-Payment Summary'
     },
     {
       label: 'Sale Report',
       icon: 'las la-key',
-      url: '#',
+      url: '/reports/expenses-reports',
       key: 't-Sale Report'
     },
     {
         label: 'Expenses Report',
         icon: 'las la-key',
-        url: '#',
+        url: '/reports/sales-reports',
         key: 't-Expenses Report'
       },
   ];
 
-  export const menuItemsUsers = [
-   
-    {
-      label: 'Users List',
-      icon: 'las la-user-plus',
-      url: '#',
-      key: 't-Users List'
-    },
-    {
-      label: 'Add User',
-      icon: 'las la-key',
-      url: '#',
-      key: 't-Add User'
-    },
-  
-  ];
 
 
 
@@ -122,14 +106,28 @@ export const menuItemsInvoices = [
     {
       label: 'Transactions List',
       icon: 'las la-user-plus',
-      url: '#',
+      url: '/transactions',
       key: 't-Transactions List'
     },
     {
       label: 'New Transaction',
       icon: 'las la-key',
-      url: '#',
+      url: 'transactions/new-transaction',
       key: 't-New Transaction'
     },
   
   ];
+
+  export const menuItemsUsers = [
+   
+    {
+      label: 'Users List',
+      icon: 'las la-user-plus',
+      url: '/users',
+      key: 't-Users List'
+    },
+
+  ];
+
+  
+
